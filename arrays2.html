@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display {
+            width: 40%;
+            border: 3px solid blue;
+            border-radius: 10px;
+            height: 100px;
+            margin: auto;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="hacerTabla()">Introducir numero</button>
+    <div id="display"></div>    
+    <script>
+        let tabla = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+        function hacerTabla() {
+            let num = parseInt(prompt("Escriba el numero a multiplicar"));
+            
+            for (let i = 0; i < tabla.length; i++) {
+                tabla[i] = num * tabla[i];
+            }
+            imprimeTabla();
+        }
+
+        function imprimeTabla() {
+            let display = document.getElementById("display");
+            display.innerHTML = "<ul>";
+
+            for (let i = 0; i < tabla.length; i++) {
+                display.innerHTML += "<li>" + tabla[i] + "</li>";
+            }
+
+            display.innerHTML += "</ul>";
+            display.style.backgroundColor = "yellow";
+            display.style.width = "30%";
+        }
+    </script>
+</body>
+
+</html>
